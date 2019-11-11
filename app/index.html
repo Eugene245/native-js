@@ -223,15 +223,15 @@
         <div class="home-container">
             <div class="home-blocks">
                 <div class="home-blocks__first-line">
-                    <div class="product-blocks-block">
+                    <div class="product-blocks-block" style="display: none">
                         <div class="product-blocks__block-img">
-                            <img src="assets/img/home/layer-32.png" alt="">
+                            <img src="" alt="">
                         </div>
                         <div class="product-block__info-container">
                             <div class="product-block__info">
-                                <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                <span class="product-block__info-product-name">Product Name Here</span>
-                                <span class="product-block__info-cost">$29,354.75</span>
+                                <span class="product-block__info-suppliers-name"></span>
+                                <span class="product-block__info-product-name"></span>
+                                <span class="product-block__info-cost"></span>
                             </div>
                             <div class="product-blocks__info-arrow">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-blocks-block">
+                    <!-- <div class="product-blocks-block">
                         <div class="product-blocks__block-img">
                             <img src="assets/img/home/bitmap.png" alt="">
                         </div>
@@ -273,11 +273,11 @@
                                 </svg>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="home-blocks-columns">
                     <div class="home-blocks__first-column">
-                        <div class="product-blocks-block">
+                        <!-- <div class="product-blocks-block">
                             <div class="product-blocks__block-img">
                                 <img src="assets/img/home/image_14.png" alt="">
                             </div>
@@ -395,10 +395,10 @@
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="home-blocks__second-column">
-                        <div class=" product-blocks-block">
+                        <!-- <div class=" product-blocks-block">
                             <div class="product-blocks__block-img">
                                 <img src="assets/img/home/image_13.png" alt="">
                             </div>
@@ -500,7 +500,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class=" product-blocks-block">
+                        <div class="product-blocks-block">
                             <div class="product-blocks__block-img">
                                 <img src="assets/img/home/image.png" alt="">
                             </div>
@@ -516,7 +516,7 @@
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -644,36 +644,235 @@
         }
 
 
-        const elements = document.querySelectorAll("*")    
+        // const elements = document.querySelectorAll("*")    
 
-        function genElemNum() {
-            return Math.floor(Math.random() * (elements.length + 1))
+        // function genElemNum() {
+        //     return Math.floor(Math.random() * (elements.length + 1))
+        // }
+
+        // function genColor() {
+        //     let colorNum1 = ((1 + 16)*Math.random()|0).toString(16);
+        //     let colorNum2 = ((1 + 16)*Math.random()|0).toString(16);
+        //     let colorNum3 = ((1 + 16)*Math.random()|0).toString(16);
+        //     return `#${colorNum1}${colorNum2}${colorNum3}`
+        // }
+
+        // function setColor (elemNum) { 
+        //     elements[elemNum].style = `background-color: ${genColor()}`
+        // }
+
+        // function unsetColor (elemNum) {
+        //     elements[elemNum].style.backgroundColor = ""
+        // }
+
+        // setColor(genElemNum())
+
+        // const bgcSetId = setInterval(() => {
+        //     setColor(genElemNum())
+        // }, 200)
+
+        // const bgcDeleteId = setInterval(() => {
+        //     unsetColor(genElemNum());
+        // }, 200)
+        
+    </script>
+    <script>
+        const prodInfoList = {
+            block1: {
+                img: "assets/img/home/layer-32.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block2: {
+                img: "assets/img/home/bitmap.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block3: {
+                img: "assets/img/home/layer-31.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block4: {
+                img: "assets/img/home/image_14.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block5: {
+                img: "assets/img/home/image_9.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block6: {
+                img: "assets/img/home/image_8.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block7: {
+                img: "assets/img/home/image_7.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block8: {
+                img: "assets/img/home/image_6.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block9: {
+                img: "assets/img/home/image_4.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block10: {
+                img: "assets/img/home/image_3.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block11: {
+                img: "assets/img/home/image_13.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block12: {
+                img: "assets/img/home/image_12.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block13: {
+                img: "assets/img/home/image_11.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block14: {
+                img: "assets/img/home/image_10.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block15: {
+                img: "assets/img/home/image_5.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block16: {
+                img: "assets/img/home/image_2.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            },
+            block17: {
+                img: "assets/img/home/image.png",
+                supName: "Supplier’s Name Here",
+                prodName: "Product Name Here",
+                prodCost: "$29,354.75"
+            }
         }
 
-        function genColor() {
-            let colorNum1 = ((1 + 16)*Math.random()|0).toString(16);
-            let colorNum2 = ((1 + 16)*Math.random()|0).toString(16);
-            let colorNum3 = ((1 + 16)*Math.random()|0).toString(16);
-            return `#${colorNum1}${colorNum2}${colorNum3}`
+
+        function firstLineBlocks() {
+            let firstLine = document.querySelector(".home-blocks__first-line")
+            let i = 0, il = 3, j = 0;
+            for (;i < il;i++) {
+                let num = Math.floor(Math.random() * (17 + 1 - j))
+                let prodObj = Object.keys(prodInfoList)[num]
+                let blockText = `<div class="product-blocks-block">
+                            <div class="product-blocks__block-img">
+                                <img src="${prodInfoList[prodObj].img}" alt="">
+                            </div>
+                            <div class="product-block__info-container">
+                                <div class="product-block__info">
+                                    <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
+                                    <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
+                                    <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
+                                </div>
+                                <div class="product-blocks__info-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
+                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>`
+                firstLine.innerHTML += blockText;
+                delete prodInfoList[prodObj]
+                j++
+            }
         }
 
-        function setColor (elemNum) { 
-            elements[elemNum].style = `background-color: ${genColor()}`
+        function firstColumnBlocks() {
+            let firstColumn = document.querySelector(".home-blocks__first-column")
+            let i = 0, il = 7, j = 0;
+            for (;i < il;i++) {
+                let num = Math.floor(Math.random() * (14 + 1 - j))
+                let prodObj = Object.keys(prodInfoList)[num]
+                let blockText = `<div class="product-blocks-block">
+                            <div class="product-blocks__block-img">
+                                <img src="${prodInfoList[prodObj].img}" alt="">
+                            </div>
+                            <div class="product-block__info-container">
+                                <div class="product-block__info">
+                                    <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
+                                    <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
+                                    <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
+                                </div>
+                                <div class="product-blocks__info-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
+                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>`
+                        firstColumn.innerHTML += blockText;
+                delete prodInfoList[prodObj]
+                j++
+            }
         }
 
-        function unsetColor (elemNum) {
-            elements[elemNum].style.backgroundColor = ""
+        function secondColumnBlocks() {
+            let firstColumn = document.querySelector(".home-blocks__second-column")
+            let i = 0, il = 7, j = 0;
+            for (;i < il;i++) {
+                let num = Math.floor(Math.random() * (11 + 1 - j))
+                let prodObj = Object.keys(prodInfoList)[num]
+                let blockText = `<div class="product-blocks-block">
+                            <div class="product-blocks__block-img">
+                                <img src="${prodInfoList[prodObj].img}" alt="">
+                            </div>
+                            <div class="product-block__info-container">
+                                <div class="product-block__info">
+                                    <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
+                                    <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
+                                    <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
+                                </div>
+                                <div class="product-blocks__info-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
+                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>`
+                        secondColumn.innerHTML += blockText;
+                delete prodInfoList[prodObj]
+                j++
+            }
         }
 
-        setColor(genElemNum())
-
-        const bgcSetId = setInterval(() => {
-            setColor(genElemNum())
-        }, 200)
-
-        const bgcDeleteId = setInterval(() => {
-            unsetColor(genElemNum());
-        }, 200)
+        firstLineBlocks()
+        firstColumnBlocks()
+        secondColumnBlocks()
 
     </script>
 </body>
