@@ -222,8 +222,8 @@
         </ul>
         <div class="home-container">
             <div class="home-blocks">
-                <div class="home-blocks__first-line">
-                    <div class="product-blocks-block" style="display: none">
+                <template id="product-block-template">
+                    <div class="product-blocks-block">
                         <div class="product-blocks__block-img">
                             <img src="" alt="">
                         </div>
@@ -240,284 +240,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="product-blocks-block">
-                        <div class="product-blocks__block-img">
-                            <img src="assets/img/home/bitmap.png" alt="">
-                        </div>
-                        <div class="product-block__info-container">
-                            <div class="product-block__info">
-                                <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                <span class="product-block__info-product-name">Product Name Here</span>
-                                <span class="product-block__info-cost">$29,354.75</span>
-                            </div>
-                            <div class="product-blocks__info-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                    <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-blocks-block">
-                        <div class="product-blocks__block-img">
-                            <img src="assets/img/home/layer-31.png" alt="">
-                        </div>
-                        <div class="product-block__info-container">
-                            <div class="product-block__info">
-                                <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                <span class="product-block__info-product-name">Product Name Here</span>
-                                <span class="product-block__info-cost">$29,354.75</span>
-                            </div>
-                            <div class="product-blocks__info-arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                    <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div> -->
+                </template>
+                <div class="home-blocks__first-line">
                 </div>
                 <div class="home-blocks-columns">
-                    <div class="home-blocks__first-column">
-                        <!-- <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_14.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_9.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_8.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_7.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_6.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_4.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_3.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="home-blocks__second-column">
-                        <!-- <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_13.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_12.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_11.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_10.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_5.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image_2.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="assets/img/home/image.png" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">Supplier’s Name Here</span>
-                                    <span class="product-block__info-product-name">Product Name Here</span>
-                                    <span class="product-block__info-cost">$29,354.75</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+                    <div class="home-blocks__first-column"></div>
+                    <div class="home-blocks__second-column"></div>
                 </div>
             </div>
         </div>
@@ -782,98 +510,61 @@
             }
         }
 
+        let blockListLength = Object.keys(prodInfoList).length
+        let numOfElements = Math.floor(Math.random() * (blockListLength + 1))
 
-        function firstLineBlocks() {
-            let firstLine = document.querySelector(".home-blocks__first-line")
-            let i = 0, il = 3, j = 0;
-            for (;i < il;i++) {
-                let num = Math.floor(Math.random() * (17 + 1 - j))
-                let prodObj = Object.keys(prodInfoList)[num]
-                let blockText = `<div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="${prodInfoList[prodObj].img}" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
-                                    <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
-                                    <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
+        function drawBlocks(selector, blocksQty, elementsQty) {
+            let blockSelector = document.querySelector(selector)
+            let i = 0, j = 0;
+            for (;i < blocksQty; i++) {
+                if (Object.keys(prodInfoList).length !== 0){
+                    let num = Math.floor(Math.random() * (elementsQty - j))
+                    let prodObj = Object.keys(prodInfoList)[num]
+
+                    let blockText = `<div class="product-blocks-block">
+                                <div class="product-blocks__block-img">
+                                    <img src="${prodInfoList[prodObj].img}" alt="">
                                 </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
+                                <div class="product-block__info-container">
+                                    <div class="product-block__info">
+                                        <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
+                                        <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
+                                        <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
+                                    </div>
+                                    <div class="product-blocks__info-arrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
+                                            <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>`
-                firstLine.innerHTML += blockText;
-                delete prodInfoList[prodObj]
-                j++
+                            </div>`
+                            
+                    blockSelector.innerHTML += blockText;
+                    delete prodInfoList[prodObj]
+                    j++
+                }
+
             }
         }
 
-        function firstColumnBlocks() {
-            let firstColumn = document.querySelector(".home-blocks__first-column")
-            let i = 0, il = 7, j = 0;
-            for (;i < il;i++) {
-                let num = Math.floor(Math.random() * (14 + 1 - j))
-                let prodObj = Object.keys(prodInfoList)[num]
-                let blockText = `<div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="${prodInfoList[prodObj].img}" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
-                                    <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
-                                    <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>`
-                        firstColumn.innerHTML += blockText;
-                delete prodInfoList[prodObj]
-                j++
+        function distributeBlocks(num) {
+            if (num === 0) {
+                console.log("No content")
+            }else if (num === 1) {
+                drawBlocks(".home-blocks__first-line", 1, blockListLength)
+            }else if (num === 2) {
+                drawBlocks(".home-blocks__first-line", 2, blockListLength)
+            }else if (num === 3) {
+                drawBlocks(".home-blocks__first-line", 3, blockListLength)
+            }else {
+                drawBlocks(".home-blocks__first-line", 3, blockListLength)
+                drawBlocks(".home-blocks__first-column", Math.round((num - 3)/2), num - 3)
+                drawBlocks(".home-blocks__second-column", Math.floor((num - 3)/2), num - 3 - Math.round((num - 3)/2))
             }
         }
 
-        function secondColumnBlocks() {
-            let firstColumn = document.querySelector(".home-blocks__second-column")
-            let i = 0, il = 7, j = 0;
-            for (;i < il;i++) {
-                let num = Math.floor(Math.random() * (11 + 1 - j))
-                let prodObj = Object.keys(prodInfoList)[num]
-                let blockText = `<div class="product-blocks-block">
-                            <div class="product-blocks__block-img">
-                                <img src="${prodInfoList[prodObj].img}" alt="">
-                            </div>
-                            <div class="product-block__info-container">
-                                <div class="product-block__info">
-                                    <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
-                                    <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
-                                    <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
-                                </div>
-                                <div class="product-blocks__info-arrow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                        <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>`
-                        secondColumn.innerHTML += blockText;
-                delete prodInfoList[prodObj]
-                j++
-            }
-        }
-
-        firstLineBlocks()
-        firstColumnBlocks()
-        secondColumnBlocks()
-
+        distributeBlocks(numOfElements)
+   
     </script>
 </body>
 </html>
