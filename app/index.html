@@ -56,28 +56,28 @@
                 <li class="home-decor-link">
                     <a href="">Home Decor</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Furniture</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Lighing</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Home Accents</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Rugs</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Outdoors</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Holidays</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Gifts</a>
                 </li>
-                <li>
+                <li class="home-decor-link">
                     <a href="">Events</a>
                 </li>
             </ul>
@@ -156,7 +156,7 @@
         </div>
         <div class="home-decor-block home-decor-block-hidden">
             <div class="home-decor-block__header">
-                <span class="home-decor-block__header-title">Home Decor</span>
+                <span class="home-decor-block__header-title"></span>
                 <span class="home-decor-block__header-text">Create & live your unique style</span>
                 <span class="home-decor-block__header-items">25478 items</span>
                 <div class="home-decor-block__header-line"></div>
@@ -340,21 +340,60 @@
     <script type="text/javascript">
 
         let link = document.querySelector(".home-decor-link")
+        let windowTitle = document.querySelector(".home-decor-block__header-title")
         let homeDecor = document.querySelector(".home-decor-block")
+        let homeDecorVisible = document.querySelector(".home-decor-block.home-decor-block-visible")
+        
         let modalButton = document.querySelector(".button-modal")
         let modal = document.querySelector(".modal")
         let close = document.querySelector(".modal-close")
 
-        link.addEventListener("click", e => {
+        document.querySelectorAll(".home-decor-link a").forEach(element => {
+            element.addEventListener("mouseover", e => {
             e.preventDefault();
-            if (homeDecor.classList.contains("home-decor-block-visible")) {
-                homeDecor.classList.add("home-decor-block-hidden")
-                homeDecor.classList.remove("home-decor-block-visible")
-            }else {
                 homeDecor.classList.add("home-decor-block-visible")    
                 homeDecor.classList.remove("home-decor-block-hidden") 
-            }
+                windowTitle.innerText = e.target.innerText
+                document.querySelector(".home-decor-block-visible")
+                    .setAttribute("style", `margin-left: ${e.target.getBoundingClientRect().left - 125}px`) 
+                
+                let displayArr = ["none", ""]
+                let numOfLinks = Math.floor(Math.random() * document.querySelectorAll(".home-decor-block__links li").length + 1)
+                console.log(numOfLinks)
+                if (numOfLinks < 9) {
+                    document.querySelectorAll(".home-decor-block__links-second-column li").forEach( el => {
+                      el.style.cssText = "display: none"
+                })    
+                document.querySelectorAll(".home-decor-block__links-third-column li").forEach( el => {
+                      el.style.cssText = "display: none"
+                })    
+                }else if (8 > numOfLinks < 17) {
+                    document.querySelectorAll(".home-decor-block__links-first-column li").forEach( el => {
+                      el.style.cssText = "display: block"
+                })    
+                document.querySelectorAll(".home-decor-block__links-first-column li").forEach( el => {
+                      el.style.cssText = "display: block"
+                })    
+                document.querySelectorAll(".home-decor-block__links-third-column li").forEach( el => {
+                      el.style.cssText = "display: none"
+                })    
+                }else {
+
+                }
+                // document.querySelectorAll(".home-decor-block__links li").forEach( el => {
+                    
+                //     el.style.cssText = `display: ${displayArr[Math.floor(Math.random() * 2)]}`
+                // })
+            })
+
+            element.addEventListener("mouseout", e => {
+                e.preventDefault();
+                    homeDecor.classList.add("home-decor-block-hidden")
+                    homeDecor.classList.remove("home-decor-block-visible")
+            })
         })
+
+        
 
         modalButton.addEventListener("click", e => {
             e.preventDefault();
