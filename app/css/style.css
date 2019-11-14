@@ -328,9 +328,8 @@ a {
 .home-decor-block-visible {
   padding: 30px;
   display: block;
-  position: absolute;
+  position: fixed;
   background-color: #fff;
-  margin-right: 1000px;
   margin-top: 0; 
   z-index: 1;
   box-shadow: 0.7px 10px 20px 0 rgba(9, 9, 9, 0.2);

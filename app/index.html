@@ -82,6 +82,51 @@
                 </li>
             </ul>
         </nav>
+        <div class="home-decor-block home-decor-block-hidden">
+                <div class="home-decor-block__header">
+                    <span class="home-decor-block__header-title"></span>
+                    <span class="home-decor-block__header-text">Create & live your unique style</span>
+                    <span class="home-decor-block__header-items">25478 items</span>
+                    <div class="home-decor-block__header-line"></div>
+                </div>
+                <div class="home-decor-block__links">
+                    <div class="home-decor-block__links-first-column">
+                        <ul>
+                            <li><a href="">Pots & Pans</a></li>
+                            <li><a href="">Pressure Cookers</a></li>
+                            <li><a href="">Kitchen Tools</a></li>
+                            <li><a href="">Gas Stoves</a></li>
+                            <li><a href="">Dining & Seving</a></li>
+                            <li><a href="">Coffee Mugs</a></li>
+                            <li><a href="">Dinnerware & Crockery</a></li>
+                            <li><a href="">Bar & Glassware</a></li>
+                        </ul>
+                    </div>
+                    <div class="home-decor-block__links-second-column">
+                        <ul>
+                            <li><a href="">Kitchen Storage</a></li>
+                            <li><a href="">Lunch Boxes</a></li>
+                            <li><a href="">Flasks & Classeroles</a></li>
+                            <li><a href="">Kitchen Containers</a></li>
+                            <li><a href="">Furnitures</a></li>
+                            <li><a href="">Beds</a></li>
+                            <li><a href="">Sofas</a></li>
+                            <li><a href="">Dining Tables & Sets</a></li>
+                        </ul>
+                    </div>
+                    <div class="home-decor-block__links-third-column">
+                        <ul>
+                            <li><a href="">Mattresses</a></li>
+                            <li><a href="">Tables</a></li>
+                            <li><a href="">Chairs</a></li>
+                            <li><a href="">Bean Bags</a></li>
+                            <li><a href="">Shoe Rags</a></li>
+                            <li><a href="">TV Units & Cabinets</a></li>
+                            <li><a href="">Wardrobes</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
     </header>
     <div class="wrapper">
         <div class="modal">
@@ -152,51 +197,6 @@
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-        <div class="home-decor-block home-decor-block-hidden">
-            <div class="home-decor-block__header">
-                <span class="home-decor-block__header-title"></span>
-                <span class="home-decor-block__header-text">Create & live your unique style</span>
-                <span class="home-decor-block__header-items">25478 items</span>
-                <div class="home-decor-block__header-line"></div>
-            </div>
-            <div class="home-decor-block__links">
-                <div class="home-decor-block__links-first-column">
-                    <ul>
-                        <li><a href="">Pots & Pans</a></li>
-                        <li><a href="">Pressure Cookers</a></li>
-                        <li><a href="">Kitchen Tools</a></li>
-                        <li><a href="">Gas Stoves</a></li>
-                        <li><a href="">Dining & Seving</a></li>
-                        <li><a href="">Coffee Mugs</a></li>
-                        <li><a href="">Dinnerware & Crockery</a></li>
-                        <li><a href="">Bar & Glassware</a></li>
-                    </ul>
-                </div>
-                <div class="home-decor-block__links-second-column">
-                    <ul>
-                        <li><a href="">Kitchen Storage</a></li>
-                        <li><a href="">Lunch Boxes</a></li>
-                        <li><a href="">Flasks & Classeroles</a></li>
-                        <li><a href="">Kitchen Containers</a></li>
-                        <li><a href="">Furnitures</a></li>
-                        <li><a href="">Beds</a></li>
-                        <li><a href="">Sofas</a></li>
-                        <li><a href="">Dining Tables & Sets</a></li>
-                    </ul>
-                </div>
-                <div class="home-decor-block__links-third-column">
-                    <ul>
-                        <li><a href="">Mattresses</a></li>
-                        <li><a href="">Tables</a></li>
-                        <li><a href="">Chairs</a></li>
-                        <li><a href="">Bean Bags</a></li>
-                        <li><a href="">Shoe Rags</a></li>
-                        <li><a href="">TV Units & Cabinets</a></li>
-                        <li><a href="">Wardrobes</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
         <ul class="breadcrumb">
@@ -354,36 +354,21 @@
                 homeDecor.classList.add("home-decor-block-visible")    
                 homeDecor.classList.remove("home-decor-block-hidden") 
                 windowTitle.innerText = e.target.innerText
+                console.log(e.target.getBoundingClientRect().left)
                 document.querySelector(".home-decor-block-visible")
-                    .setAttribute("style", `margin-left: ${e.target.getBoundingClientRect().left - 125}px`) 
-                
+                    .setAttribute("style", `margin-left: ${e.target.getBoundingClientRect().left}px`) 
                 let displayArr = ["none", ""]
                 let numOfLinks = Math.floor(Math.random() * document.querySelectorAll(".home-decor-block__links li").length + 1)
-                console.log(numOfLinks)
-                if (numOfLinks < 9) {
-                    document.querySelectorAll(".home-decor-block__links-second-column li").forEach( el => {
+                let linksArr = document.querySelectorAll(".home-decor-block__links li")
+                let i = 0
+                linksArr.forEach( el => {
                       el.style.cssText = "display: none"
-                })    
-                document.querySelectorAll(".home-decor-block__links-third-column li").forEach( el => {
-                      el.style.cssText = "display: none"
-                })    
-                }else if (8 > numOfLinks < 17) {
-                    document.querySelectorAll(".home-decor-block__links-first-column li").forEach( el => {
-                      el.style.cssText = "display: block"
-                })    
-                document.querySelectorAll(".home-decor-block__links-first-column li").forEach( el => {
-                      el.style.cssText = "display: block"
-                })    
-                document.querySelectorAll(".home-decor-block__links-third-column li").forEach( el => {
-                      el.style.cssText = "display: none"
-                })    
-                }else {
+                })  
 
-                }
-                // document.querySelectorAll(".home-decor-block__links li").forEach( el => {
-                    
-                //     el.style.cssText = `display: ${displayArr[Math.floor(Math.random() * 2)]}`
-                // })
+                for (; i < numOfLinks; i++) {
+                    linksArr[i].style.cssText = "display: "
+                }          
+                
             })
 
             element.addEventListener("mouseout", e => {
