@@ -365,9 +365,15 @@ a {
   justify-content: space-between;
 }
 
-.home-decor-block__links a{
+.home-decor-block__links li{
+  list-style-type: none; 
+}
+
+.home-decor-block__links li a {
   color: #878786;
 }
+
+
 
 
 

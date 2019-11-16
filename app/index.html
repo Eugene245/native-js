@@ -53,32 +53,32 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li class="home-decor-link">
-                    <a href="">Home Decor</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__home-decor" href="">Home Decor</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Furniture</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__furniture" href="">Furniture</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Lighing</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__lighting" href="">Lighting</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Home Accents</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__home-accents" href="">Home Accents</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Rugs</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__rugs" href="">Rugs</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Outdoors</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__outdoors" href="">Outdoors</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Holidays</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__holidays" href="">Holidays</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Gifts</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__gifts" href="">Gifts</a>
                 </li>
-                <li class="home-decor-link">
-                    <a href="">Events</a>
+                <li class="navbar-link">
+                    <a class="navbar-link__events" href="">Events</a>
                 </li>
             </ul>
         </nav>
@@ -92,37 +92,37 @@
                 <div class="home-decor-block__links">
                     <div class="home-decor-block__links-first-column">
                         <ul>
-                            <li><a href="">Pots & Pans</a></li>
+                            <!-- <li><a href="">Pots & Pans</a></li>
                             <li><a href="">Pressure Cookers</a></li>
                             <li><a href="">Kitchen Tools</a></li>
                             <li><a href="">Gas Stoves</a></li>
                             <li><a href="">Dining & Seving</a></li>
                             <li><a href="">Coffee Mugs</a></li>
                             <li><a href="">Dinnerware & Crockery</a></li>
-                            <li><a href="">Bar & Glassware</a></li>
+                            <li><a href="">Bar & Glassware</a></li> -->
                         </ul>
                     </div>
                     <div class="home-decor-block__links-second-column">
                         <ul>
-                            <li><a href="">Kitchen Storage</a></li>
+                            <!-- <li><a href="">Kitchen Storage</a></li>
                             <li><a href="">Lunch Boxes</a></li>
                             <li><a href="">Flasks & Classeroles</a></li>
                             <li><a href="">Kitchen Containers</a></li>
                             <li><a href="">Furnitures</a></li>
                             <li><a href="">Beds</a></li>
                             <li><a href="">Sofas</a></li>
-                            <li><a href="">Dining Tables & Sets</a></li>
+                            <li><a href="">Dining Tables & Sets</a></li> -->
                         </ul>
                     </div>
                     <div class="home-decor-block__links-third-column">
                         <ul>
-                            <li><a href="">Mattresses</a></li>
+                            <!-- <li><a href="">Mattresses</a></li>
                             <li><a href="">Tables</a></li>
                             <li><a href="">Chairs</a></li>
                             <li><a href="">Bean Bags</a></li>
                             <li><a href="">Shoe Rags</a></li>
                             <li><a href="">TV Units & Cabinets</a></li>
-                            <li><a href="">Wardrobes</a></li>
+                            <li><a href="">Wardrobes</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -337,258 +337,16 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript">
+    <script type="module">
 
-        let link = document.querySelector(".home-decor-link")
-        let windowTitle = document.querySelector(".home-decor-block__header-title")
-        let homeDecor = document.querySelector(".home-decor-block")
-        let homeDecorVisible = document.querySelector(".home-decor-block.home-decor-block-visible")
-        
-        let modalButton = document.querySelector(".button-modal")
-        let modal = document.querySelector(".modal")
-        let close = document.querySelector(".modal-close")
+        import Link from '../js/links.js'
+        import ModalWindow from '../js/modal.js'
+        import DistributeBlocks from '../js/distribute.js'
 
-        document.querySelectorAll(".home-decor-link a").forEach(element => {
-            element.addEventListener("mouseover", e => {
-            e.preventDefault();
-                homeDecor.classList.add("home-decor-block-visible")    
-                homeDecor.classList.remove("home-decor-block-hidden") 
-                windowTitle.innerText = e.target.innerText
-                console.log(e.target.getBoundingClientRect().left)
-                document.querySelector(".home-decor-block-visible")
-                    .setAttribute("style", `margin-left: ${e.target.getBoundingClientRect().left}px`) 
-                let displayArr = ["none", ""]
-                let numOfLinks = Math.floor(Math.random() * document.querySelectorAll(".home-decor-block__links li").length + 1)
-                let linksArr = document.querySelectorAll(".home-decor-block__links li")
-                let i = 0
-                linksArr.forEach( el => {
-                      el.style.cssText = "display: none"
-                })  
-
-                for (; i < numOfLinks; i++) {
-                    linksArr[i].style.cssText = "display: "
-                }          
-                
-            })
-
-            element.addEventListener("mouseout", e => {
-                e.preventDefault();
-                    homeDecor.classList.add("home-decor-block-hidden")
-                    homeDecor.classList.remove("home-decor-block-visible")
-            })
-        })
-
-        
-
-        modalButton.addEventListener("click", e => {
-            e.preventDefault();
-            modal.style.display = "block";
-        })
-
-        close.onclick = () => {
-            modal.style.display = "none";
-        }
-
-        window.onclick = e => {
-            if (e.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-
-        // const elements = document.querySelectorAll("*")    
-
-        // function genElemNum() {
-        //     return Math.floor(Math.random() * (elements.length + 1))
-        // }
-
-        // function genColor() {
-        //     let colorNum1 = ((1 + 16)*Math.random()|0).toString(16);
-        //     let colorNum2 = ((1 + 16)*Math.random()|0).toString(16);
-        //     let colorNum3 = ((1 + 16)*Math.random()|0).toString(16);
-        //     return `#${colorNum1}${colorNum2}${colorNum3}`
-        // }
-
-        // function setColor (elemNum) { 
-        //     elements[elemNum].style = `background-color: ${genColor()}`
-        // }
-
-        // function unsetColor (elemNum) {
-        //     elements[elemNum].style.backgroundColor = ""
-        // }
-
-        // setColor(genElemNum())
-
-        // const bgcSetId = setInterval(() => {
-        //     setColor(genElemNum())
-        // }, 200)
-
-        // const bgcDeleteId = setInterval(() => {
-        //     unsetColor(genElemNum());
-        // }, 200)
-        
-    </script>
-    <script>
-        const prodInfoList = {
-            block1: {
-                img: "assets/img/home/layer-32.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block2: {
-                img: "assets/img/home/bitmap.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block3: {
-                img: "assets/img/home/layer-31.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block4: {
-                img: "assets/img/home/image_14.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block5: {
-                img: "assets/img/home/image_9.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block6: {
-                img: "assets/img/home/image_8.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block7: {
-                img: "assets/img/home/image_7.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block8: {
-                img: "assets/img/home/image_6.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block9: {
-                img: "assets/img/home/image_4.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block10: {
-                img: "assets/img/home/image_3.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block11: {
-                img: "assets/img/home/image_13.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block12: {
-                img: "assets/img/home/image_12.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block13: {
-                img: "assets/img/home/image_11.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block14: {
-                img: "assets/img/home/image_10.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block15: {
-                img: "assets/img/home/image_5.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block16: {
-                img: "assets/img/home/image_2.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            },
-            block17: {
-                img: "assets/img/home/image.png",
-                supName: "Supplier’s Name Here",
-                prodName: "Product Name Here",
-                prodCost: "$29,354.75"
-            }
-        }
-
-        let blockListLength = Object.keys(prodInfoList).length
-        let numOfElements = Math.floor(Math.random() * (blockListLength + 1))
-
-        function drawBlocks(selector, blocksQty, elementsQty) {
-            let blockSelector = document.querySelector(selector)
-            let i = 0, j = 0;
-            for (;i < blocksQty; i++) {
-                if (Object.keys(prodInfoList).length !== 0){
-                    let num = Math.floor(Math.random() * (elementsQty - j))
-                    let prodObj = Object.keys(prodInfoList)[num]
-
-                    let blockText = `<div class="product-blocks-block">
-                                <div class="product-blocks__block-img">
-                                    <img src="${prodInfoList[prodObj].img}" alt="">
-                                </div>
-                                <div class="product-block__info-container">
-                                    <div class="product-block__info">
-                                        <span class="product-block__info-suppliers-name">${prodInfoList[prodObj].supName}</span>
-                                        <span class="product-block__info-product-name">${prodInfoList[prodObj].prodName}</span>
-                                        <span class="product-block__info-cost">${prodInfoList[prodObj].prodCost}</span>
-                                    </div>
-                                    <div class="product-blocks__info-arrow">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">
-                                            <path fill="#C6C6C5" fill-rule="evenodd" d="M2.055.006l9.947 9.938-1.882 1.88-.024-.024-8.202 8.206-1.889-1.888 8.202-8.205L.174 1.886l1.88-1.88z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>`
-                            
-                    blockSelector.innerHTML += blockText;
-                    delete prodInfoList[prodObj]
-                    j++
-                }
-
-            }
-        }
-
-        function distributeBlocks(num) {
-            if (num === 0) {
-                console.log("No content")
-            }else if (num === 1) {
-                drawBlocks(".home-blocks__first-line", 1, blockListLength)
-            }else if (num === 2) {
-                drawBlocks(".home-blocks__first-line", 2, blockListLength)
-            }else if (num === 3) {
-                drawBlocks(".home-blocks__first-line", 3, blockListLength)
-            }else {
-                drawBlocks(".home-blocks__first-line", 3, blockListLength)
-                drawBlocks(".home-blocks__first-column", Math.round((num - 3)/2), num - 3)
-                drawBlocks(".home-blocks__second-column", Math.floor((num - 3)/2), num - 3 - Math.round((num - 3)/2))
-            }
-        }
-
-        distributeBlocks(numOfElements)
-   
+        Link();
+        ModalWindow();
+        DistributeBlocks();
+    
     </script>
 </body>
 </html>
