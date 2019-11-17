@@ -122,6 +122,10 @@ a {
   margin-top: -8px;
 }
 
+.logo svg {
+  cursor: pointer;
+}
+
 .search-form, .header-top-buttons {
   vertical-align: 100%;
 }
@@ -187,7 +191,6 @@ a {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1440px;
   padding: 0 5.3125rem;
   padding-bottom: 8.125rem;
   min-height: calc(100vh - 145px - 265px);
@@ -958,6 +961,10 @@ right: -10px;
   width: 13.75rem;
 }
 
+.button-checkout-payment {
+  width: 340px;
+}
+
 .input-title {
   font-size: 0.875rem;
   display: block;
@@ -1053,7 +1060,7 @@ right: -10px;
 }
 
 .checkbox-container input:checked ~ .checkbox-checkmark {
-  background: url("img/check-mark.png") no-repeat center;
+  background: url("../assets/img/check-mark.png") no-repeat center;
 }
 
 .checkbox-checkmark:after {
