@@ -7,7 +7,7 @@ export default function(img, supName, prodName, prodCost) {
       <div class="product-block__info">
           <span class="product-block__info-suppliers-name">${supName}</span>
           <span class="product-block__info-product-name">${prodName}</span>
-          <span class="product-block__info-cost">${prodCost}</span>
+          <span class="product-block__info-cost">$${prodCost}</span>
       </div>
       <div class="product-blocks__info-arrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20" viewBox="0 0 12 20">

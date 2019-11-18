@@ -4,118 +4,118 @@
         "img": "assets/img/home/layer-32.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 30
     },
     "block2": {
         "category": "furniture",
         "img": "assets/img/home/bitmap.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 56.9
     },
     "block3": {
         "category": "rugs",
         "img": "assets/img/home/layer-31.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 20
     },
     "block4": {
         "category": "rugs",
         "img": "assets/img/home/image_14.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 29
     },
     "block5": {
         "category": "home-decor",
         "img": "assets/img/home/image_9.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 75.8
     },
     "block6": {
         "category": "holidays",
         "img": "assets/img/home/image_8.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 295.75
     },
     "block7": {
         "category": "lighting",
         "img": "assets/img/home/image_7.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 88.5
     },
     "block8": {
         "category": "lighting",
         "img": "assets/img/home/image_6.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 105.9
     },
     "block9": {
         "category": "rugs",
         "img": "assets/img/home/image_4.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 45
     },
     "block10": {
         "category": "gifts",
         "img": "assets/img/home/image_3.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 75
     },
     "block11": {
         "category": "outdoors",
         "img": "assets/img/home/image_13.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 89.9
     },
     "block12": {
         "category": "home-decor",
         "img": "assets/img/home/image_12.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 5
     },
     "block13": {
         "category": "events",
         "img": "assets/img/home/image_11.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 80
     },
     "block14": {
         "category": "outdoors",
         "img": "assets/img/home/image_10.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 100
     },
     "block15": {
         "category": "events",
         "img": "assets/img/home/image_5.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 125
     },
     "block16": {
         "category": "outdoors",
         "img": "assets/img/home/image_2.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 209.7
     },
     "block17": {
         "category": "outdoors",
         "img": "assets/img/home/image.png",
         "supName": "Supplier’s Name Here",
         "prodName": "Product Name Here",
-        "prodCost": "$29,354.75"
+        "prodCost": 10.2
     }
 }
