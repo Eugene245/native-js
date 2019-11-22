@@ -1,6 +1,6 @@
 import checkoutSwitch from '../js/checkout-switch.js'
 import ModalWindow from '../js/modal.js'
-import Cart from '../api/cart-template.js'
+import { DrawCart, deleteItemListener } from '../api/cart-template.js'
 
 let wrapper = document.querySelector(".wrapper")
 
@@ -8,7 +8,8 @@ export default function() {
   document.querySelector(".cart-icon svg").addEventListener("click", e => {
     let title = 'cart';
     let url = "http://localhost:3000/cart";
-      wrapper.innerHTML = Cart();
+    wrapper.innerHTML = DrawCart();
+    deleteItemListener();
       wrapper.querySelector(".button_process_to_checkout").addEventListener("click", e => {
         let title = 'checkout';
         let url = "http://localhost:3000/checkout";

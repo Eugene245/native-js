@@ -431,9 +431,10 @@ a {
 }
 
 .cart-list__product-icon img {
+  width: 8.5rem;
+  height: 6.25rem;
   position: absolute;
-  left: 25px;
-  top: 5px;
+  
 }
 
 .cart-list__product-info {
@@ -454,7 +455,7 @@ a {
 .cart-list__product-price {
   color: #878786;
   vertical-align: 3.125rem;
-  margin-right: 7.125rem;
+  width: 150px;
 }
 
 .cart-list__qty-input {

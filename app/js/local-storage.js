@@ -1,8 +1,6 @@
-export default function cartStore(prodNum, obj) {
-    localStorage.setItem(prodNum, JSON.stringify(obj));
-
-    // var retrievedObject = localStorage.getItem(prodNum);
-
-    // console.log(prodNum, JSON.parse(retrievedObject));
+export default function cartStore(id, obj) {
+    
+    localStorage.setItem(id, JSON.stringify(obj));
+    
 
 }

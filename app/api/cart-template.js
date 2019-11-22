@@ -1,17 +1,35 @@
 import cartItem from '../api/cart-item.js'
 
-let cartList = ""
-
-function CartListItemDraw() {
+function CartListItemDraw(cartList, totalAmount) {
   for (let i = 0; i < localStorage.length; i++) {
-    let prodObj = JSON.parse(localStorage.getItem(i))
-    console.log(prodObj)
-    cartList += cartItem(prodObj.name, prodObj["supplier's name"], prodObj.cost, prodObj.img)
+    let LSKey = localStorage.key(i)
+  
+    let prodObj = JSON.parse(localStorage.getItem(LSKey))
+    
+    cartList += cartItem(LSKey, prodObj.prodName, prodObj.supName, prodObj.prodCost, prodObj.img)  
+    totalAmount += (prodObj.quantity * prodObj.prodCost)
+
   }
-  return cartList
+  deleteItemListener()
+  return [cartList, totalAmount]
 }
 
- export default function(){
+export function deleteItemListener() {
+  let crossIcon = document.getElementsByClassName("cart-list__cross-icon")
+    
+    setTimeout(() => {
+      for (let i = 0; i < crossIcon.length; i++) {
+          crossIcon[i].addEventListener("click", e => {
+          localStorage.removeItem(e.target.parentElement.parentElement.getAttribute("data-product-id"))
+          document.querySelector(".wrapper").innerHTML = DrawCart();
+        })
+      }
+    }, 0);
+}
+
+ export function DrawCart(){
+   let cartList = ""
+   let totalAmount = 0
    return `<div class="wrapper wrapper_with_aside">
    <ul class="breadcrumb">
      <li>
@@ -37,7 +55,7 @@ function CartListItemDraw() {
      <div class="cart-list-separation-line"></div>
      <div class="cart-list">
        <ul>
-       ${CartListItemDraw()}
+       ${CartListItemDraw(cartList, totalAmount)[0]}
        </ul>
      </div>
      <div class="cart-list-separation-line"></div>
@@ -58,7 +76,7 @@ function CartListItemDraw() {
      <div class="total-amount-block">
        <div class="total-amount-block__text">
          <span class="total-amount-block__title">Total Amount</span>
-         <span class="total-amount-block__value">$254.84</span>
+         <span class="total-amount-block__value">$${CartListItemDraw(cartList, totalAmount)[1]}</span>
        </div>
        <button class="button button_process_to_checkout">PROCESS TO CHECKOUT</button>
      </div>

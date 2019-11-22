@@ -1,5 +1,5 @@
-export default function(img, supName, prodName, prodCost) {
-  return `<div class="product-blocks-block">
+export default function(id, img, supName, prodName, prodCost) {
+  return `<div class="product-blocks-block" data-product-id="${id}">
   <div class="product-blocks__block-img">
       <img src="${img}" alt="">
   </div>

@@ -1,8 +1,9 @@
 import blockText from '../api/product-template.js'
-import prodArr from '../api/products-array.js'
+import prodList from '../api/products.js'
 
 function drawBlocks(selector, blocksQty, elementsQty, prodInfoList) {
     let blockSelector = document.querySelector(selector)
+
     let i = 0, j = 0;
     
     for (;i < blocksQty; i++) {
@@ -10,7 +11,7 @@ function drawBlocks(selector, blocksQty, elementsQty, prodInfoList) {
             let num = Math.floor(Math.random() * (elementsQty - j))
             let prodObj = Object.keys(prodInfoList)[num]
 
-            let prodBlock = blockText()(prodInfoList[prodObj].img, prodInfoList[prodObj].supName, prodInfoList[prodObj].prodName, prodInfoList[prodObj].prodCost)
+            let prodBlock = blockText(prodInfoList[prodObj].id, prodInfoList[prodObj].img, prodInfoList[prodObj].supName, prodInfoList[prodObj].prodName, prodInfoList[prodObj].prodCost)
                     
             blockSelector.innerHTML += prodBlock;
             delete prodInfoList[prodObj]
@@ -38,12 +39,12 @@ function distributeBlocks(num, blockListLength, prodInfoList) {
     }
 }
 
-export default function(category) {    
-    let prodInfoList = JSON.parse(prodArr)
-    
+export default function(category) {  
+    let prodInfoList = {}
+    Object.assign(prodInfoList, prodList)
     if (arguments[0] !== undefined){
         for(let key in prodInfoList) {
-            console.log(prodInfoList[key])
+            
             if(prodInfoList[key].category !== category){
                 delete prodInfoList[key]
             }
