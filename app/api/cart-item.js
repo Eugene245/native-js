@@ -15,13 +15,13 @@ export default function (id, prodName, supName, cost, img) {
       </div>
     </div>
     <div class="cart-list__product-price">
-      <span>${cost}</span>
+      <span>$${cost}</span>
     </div>
     <div class="cart-list__qty-input">
       <input type="text" class="input input_qty">
     </div>
     <div class="cart-list__product-total-price">
-      <span>${cost}</span>
+      <span>$${cost}</span>
     </div>
     </li>`
 }

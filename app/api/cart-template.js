@@ -10,9 +10,23 @@ function CartListItemDraw(cartList, totalAmount) {
     totalAmount += (prodObj.quantity * prodObj.prodCost)
 
   }
+  // qtyItemListener()
   deleteItemListener()
   return [cartList, totalAmount]
 }
+
+// function qtyItemListener() {
+//   let qtyInput = document.getElementsByClassName("input_qty")
+//   setTimeout(() => {
+//     for (let i = 0; i < qtyInput.length; i++) {
+//       qtyInput[i].addEventListener("input", e => {
+//         let newValue = {};
+//         localStorage.getItem(e.target.parentElement.parentElement.getAttribute("data-product-id")) 
+//       })
+//     }
+//   })
+  
+// }
 
 export function deleteItemListener() {
   let crossIcon = document.getElementsByClassName("cart-list__cross-icon")

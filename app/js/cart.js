@@ -40,7 +40,7 @@ export default function() {
             // newCart.add(id, prodName, prodSupName, prodCost, prodImg)
             // newCart.count(Number(prodCost.replace("$", "")));
             // prodTotalPriceSpan.innerText = `$${newCart.totalPrice}`
-            console.log(id, prodList[`${id}`])
+
             CartStore(id, prodList[`${id}`])    
             
         })
