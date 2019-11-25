@@ -1,5 +1,6 @@
 import checkoutSwitch from '../js/checkout-switch.js'
 import {sendRequest} from '../js/page-transition.js'
+import Checkout from '../api/checkout.js'
 
 export default function() {
   let wrapper = document.querySelector(".wrapper")
@@ -7,9 +8,7 @@ export default function() {
     let title = 'checkout';
     let url = "http://localhost:3000/checkout";
     history.pushState({}, title, url)
-    sendRequest("http://localhost:3000/checkout.html")
-      .then( response => {
-        wrapper.innerHTML = response            
+        wrapper.innerHTML = Checkout()            
           checkoutSwitch();
         wrapper.querySelector(".button-checkout-payment").addEventListener("click", e => {
           let title = 'Success';
@@ -28,6 +27,5 @@ export default function() {
             })
           }, Math.random() * 2000)
         })
-  })
   })
 }

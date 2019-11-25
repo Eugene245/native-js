@@ -1,5 +1,18 @@
+import checkoutListItem from './checkout-list-item.js'
+import {CartTotalAmountDraw} from './cart-template.js'
 
-        <ul class="breadcrumb">
+function CheckoutListItemDraw(checkoutList) {  
+    for (let i = 0; i < localStorage.length; i++) {
+        let LSKey = localStorage.key(i)
+      let prodObj = JSON.parse(localStorage.getItem(LSKey))
+      checkoutList += checkoutListItem(prodObj.prodName, prodObj.prodCost, prodObj.img, prodObj.quantity)  
+    }
+    return checkoutList
+  }
+
+export default function() {
+    let checkoutList = ""
+    return `<ul class="breadcrumb">
             <li>
                 <a href=""><span>Home</span></a>
             </li>
@@ -93,57 +106,14 @@
                         <div class="oreder-list-title">
                             <span>Your Order</span>
                         </div>
-                        <ul class="order-list">
-                            <li>
-                                <div class="product-icon order-list__product-icon">
-                                    <img src="assets/img/layer-7-copy.png" alt="">
-                                </div>
-                                <div class="order-list__product-name">
-                                    <span>Product Name Here</span>
-                                </div>
-                                <input type="text" class="input input_qty">
-                                <div class="order-list__product-price">
-                                    <span>$28.99</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-icon order-list__product-icon">
-                                    <img src="assets/img/bitmap.png" alt="">
-                                </div>
-                                <div class="order-list__product-name">
-                                    <span>Product Name Here</span>
-                                </div>
-                                <input type="text" class="input input_qty">
-                                <div class="order-list__product-price">
-                                    <span>$28.99</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-icon order-list__product-icon">
-                                    <img src="assets/img/bitmap-2.png" alt="">
-                                </div>
-                                <div class="order-list__product-name">
-                                    <span>Product Name Here</span>
-                                </div>
-                                <input type="text" class="input input_qty">
-                                <div class="order-list__product-price">
-                                    <span>$28.99</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-icon order-list__product-icon">
-                                    <img src="assets/img/layer-7-copy.png" alt="">
-                                </div>
-                                <div class="order-list__product-name">
-                                    <span>Product Name Here</span>
-                                </div>
-                                <input type="text" class="input input_qty">
-                                <div class="order-list__product-price">
-                                    <span>$28.99</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                            <ul class="order-list">
+                                ${CheckoutListItemDraw(checkoutList)}
+                                <li class="order-list-shipping-charge">
+                                    <span>Shipping Charge</span>
+                                    <span>$5.00</span>
+                                </li>
+                            </ul> 
+                        </div>
                     <div class="payment-info">
                         <div class="payment-info__card-radio">
                             <label class="radio-container">
@@ -181,10 +151,11 @@
                                 <input type="text" class="input input_payment_big" placeholder="abc@xyz.com">
                             </div>
                             <button class="button button-checkout-payment">
-                                <span>Pay $254.84</span>
+                                <span>Pay $${CartTotalAmountDraw() + 5}</span>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>`
+}

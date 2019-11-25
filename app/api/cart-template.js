@@ -2,18 +2,27 @@ import cartItem from '../api/cart-item.js'
 import CartStore from '../js/local-storage.js'
 import processToCheckout from '../js/process-to-checkout.js'
 
-function CartListItemDraw(cartList, totalAmount) {  
+function CartListItemDraw(cartList) {  
   for (let i = 0; i < localStorage.length; i++) {
       let LSKey = localStorage.key(i)
     let prodObj = JSON.parse(localStorage.getItem(LSKey))
-
     cartList += cartItem(LSKey, prodObj.prodName, prodObj.supName, prodObj.prodCost, prodObj.img, prodObj.quantity)  
-    totalAmount += (prodObj.quantity * prodObj.prodCost)
-
   }
   deleteItemListen();
   qtyChangeItemListen();
-  return [cartList, totalAmount]
+  return cartList
+}
+
+export function CartTotalAmountDraw() {  
+  let totalAmount = 0
+  for (let i = 0; i < localStorage.length; i++) {
+    let LSKey = localStorage.key(i)
+    let prodObj = JSON.parse(localStorage.getItem(LSKey))
+    totalAmount += (prodObj.quantity * prodObj.prodCost)
+  }
+  
+    document.querySelector(".cart-icon span").innerText = `$${totalAmount}`
+  return totalAmount
 }
 
 export function qtyChangeItemListen() {
@@ -49,11 +58,6 @@ export function deleteItemListen() {
 
  export function DrawCart(){
    let cartList = ""
-   let totalAmount = 0
-   if(CartListItemDraw(cartList, totalAmount)[1] !== 0)
-    document.querySelector(".cart-icon span").innerText = `$${CartListItemDraw(cartList, totalAmount)[1]}`    
-
-  
    return `<div class="wrapper wrapper_with_aside">
    <ul class="breadcrumb">
      <li>
@@ -79,7 +83,7 @@ export function deleteItemListen() {
      <div class="cart-list-separation-line"></div>
      <div class="cart-list">
        <ul>
-       ${CartListItemDraw(cartList, totalAmount)[0]}
+       ${CartListItemDraw(cartList)}
        </ul>
      </div>
      <div class="cart-list-separation-line"></div>
@@ -91,7 +95,7 @@ export function deleteItemListen() {
    <div class="total-amount">
      <div class="total-amount__subtotal">
        <span class="total-amount__subtotal-title">Subtotal</span>
-       <span class="total-amount__subtotal-value">$${CartListItemDraw(cartList, totalAmount)[1]}</span>
+       <span class="total-amount__subtotal-value">$${CartTotalAmountDraw()}</span>
      </div>
      <div class="total-amount__shipping">
        <span class="total-amount__shipping-title">Shipping</span>
@@ -100,7 +104,7 @@ export function deleteItemListen() {
      <div class="total-amount-block">
        <div class="total-amount-block__text">
          <span class="total-amount-block__title">Total Amount</span>
-         <span class="total-amount-block__value">$${CartListItemDraw(cartList, totalAmount)[1] + 5}</span>
+         <span class="total-amount-block__value">$${CartTotalAmountDraw() + 5}</span>
        </div>
        <button class="button button_process_to_checkout">PROCESS TO CHECKOUT</button>
      </div>

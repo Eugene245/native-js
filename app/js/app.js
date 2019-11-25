@@ -4,15 +4,14 @@ import DistributeBlocks from './distribute.js'
 import CategoryLinks from './category-links.js'
 import {pageTransition} from './page-transition.js'
 import Cart from './cart.js'
-
-localStorage.clear()
+import {CartTotalAmountDraw} from '../api/cart-template.js'
 
 Link();
 ModalWindow();
 DistributeBlocks();
 CategoryLinks();
 pageTransition();
-
 setTimeout(() => {
   Cart();
+  CartTotalAmountDraw();
 }, 0)

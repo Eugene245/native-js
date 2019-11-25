@@ -609,14 +609,14 @@ a {
 }
 
 .order-list__product-icon {
-  width: 68px;
-  height: 50px; 
+  width: 71px;
+  height: 53px; 
 }
 
 .order-list__product-icon img {
   position: absolute;
-  left: 14px;
-  top: 3px;
+  width: 68px;
+  height: 50px;
 }
 
 .order-list__product-name {
@@ -639,6 +639,17 @@ a {
 
 .order-list__product-price span {
   float: right;
+}
+
+.order-list-shipping-charge{
+  font-size: 0.875rem;
+  color: #878786;
+  margin: 30px 60px 0 0;
+  float: right;
+}
+
+.order-list-shipping-charge span{ 
+  padding: 0 30px;
 }
 
 .payment-info {
