@@ -5,9 +5,9 @@ export default function() {
     element.addEventListener("click", e => {
       e.preventDefault();
       let name = e.target.className.replace("navbar-link__", "")
-      let state = {}
+      let state = {page: name}
       let title = 'Hello World';
-      let url = `http://localhost:3000/${name}`;
+      let url = `${name}`;
       const xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -25,5 +25,7 @@ export default function() {
       history.pushState(state, title, url)
     })
   })
+  
+  
 }
 

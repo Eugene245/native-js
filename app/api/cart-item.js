@@ -1,4 +1,4 @@
-export default function (id, prodName, supName, cost, img) {
+export default function (id, prodName, supName, cost, img, qty) {
     return `<li class="cart-list-item" data-product-id="${id}">
     <div class="cart-list__cross-icon">
       <img src="assets/img/cross.png" alt="">
@@ -18,10 +18,10 @@ export default function (id, prodName, supName, cost, img) {
       <span>$${cost}</span>
     </div>
     <div class="cart-list__qty-input">
-      <input type="text" class="input input_qty">
+      <input type="text" class="input input_qty" value="${qty}">
     </div>
     <div class="cart-list__product-total-price">
-      <span>$${cost}</span>
+      <span>$${cost * qty}</span>
     </div>
     </li>`
 }

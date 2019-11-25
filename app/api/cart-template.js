@@ -1,41 +1,47 @@
 import cartItem from '../api/cart-item.js'
+import CartStore from '../js/local-storage.js'
+import processToCheckout from '../js/process-to-checkout.js'
 
-function CartListItemDraw(cartList, totalAmount) {
+function CartListItemDraw(cartList, totalAmount) {  
   for (let i = 0; i < localStorage.length; i++) {
-    let LSKey = localStorage.key(i)
-  
+      let LSKey = localStorage.key(i)
     let prodObj = JSON.parse(localStorage.getItem(LSKey))
-    
-    cartList += cartItem(LSKey, prodObj.prodName, prodObj.supName, prodObj.prodCost, prodObj.img)  
+
+    cartList += cartItem(LSKey, prodObj.prodName, prodObj.supName, prodObj.prodCost, prodObj.img, prodObj.quantity)  
     totalAmount += (prodObj.quantity * prodObj.prodCost)
 
   }
-  // qtyItemListener()
-  deleteItemListener()
+  deleteItemListen();
+  qtyChangeItemListen();
   return [cartList, totalAmount]
 }
 
-// function qtyItemListener() {
-//   let qtyInput = document.getElementsByClassName("input_qty")
-//   setTimeout(() => {
-//     for (let i = 0; i < qtyInput.length; i++) {
-//       qtyInput[i].addEventListener("input", e => {
-//         let newValue = {};
-//         localStorage.getItem(e.target.parentElement.parentElement.getAttribute("data-product-id")) 
-//       })
-//     }
-//   })
-  
-// }
+export function qtyChangeItemListen() {
+  let qtyInput = document.getElementsByClassName("input_qty")  
+    setTimeout(() => {
+      for (let i = 0; i < qtyInput.length; i++) {
+          qtyInput[i].addEventListener("change", e => {
+          let id = qtyInput[i].parentElement.parentElement.getAttribute("data-product-id")
+          
+          let localStorageObj = JSON.parse(localStorage.getItem(id))
+          
+          localStorageObj.quantity = qtyInput[i].value
+          CartStore(id, localStorageObj)
+          document.querySelector(".wrapper").innerHTML = DrawCart();
+          processToCheckout()
+        })
+      }
+    }, 0);
+}
 
-export function deleteItemListener() {
-  let crossIcon = document.getElementsByClassName("cart-list__cross-icon")
-    
+export function deleteItemListen() {
+  let crossIcon = document.getElementsByClassName("cart-list__cross-icon")  
     setTimeout(() => {
       for (let i = 0; i < crossIcon.length; i++) {
           crossIcon[i].addEventListener("click", e => {
           localStorage.removeItem(e.target.parentElement.parentElement.getAttribute("data-product-id"))
           document.querySelector(".wrapper").innerHTML = DrawCart();
+          processToCheckout();
         })
       }
     }, 0);
@@ -44,6 +50,10 @@ export function deleteItemListener() {
  export function DrawCart(){
    let cartList = ""
    let totalAmount = 0
+   if(CartListItemDraw(cartList, totalAmount)[1] !== 0)
+    document.querySelector(".cart-icon span").innerText = `$${CartListItemDraw(cartList, totalAmount)[1]}`    
+
+  
    return `<div class="wrapper wrapper_with_aside">
    <ul class="breadcrumb">
      <li>
@@ -81,7 +91,7 @@ export function deleteItemListener() {
    <div class="total-amount">
      <div class="total-amount__subtotal">
        <span class="total-amount__subtotal-title">Subtotal</span>
-       <span class="total-amount__subtotal-value">$145.84</span>
+       <span class="total-amount__subtotal-value">$${CartListItemDraw(cartList, totalAmount)[1]}</span>
      </div>
      <div class="total-amount__shipping">
        <span class="total-amount__shipping-title">Shipping</span>
@@ -90,7 +100,7 @@ export function deleteItemListener() {
      <div class="total-amount-block">
        <div class="total-amount-block__text">
          <span class="total-amount-block__title">Total Amount</span>
-         <span class="total-amount-block__value">$${CartListItemDraw(cartList, totalAmount)[1]}</span>
+         <span class="total-amount-block__value">$${CartListItemDraw(cartList, totalAmount)[1] + 5}</span>
        </div>
        <button class="button button_process_to_checkout">PROCESS TO CHECKOUT</button>
      </div>
