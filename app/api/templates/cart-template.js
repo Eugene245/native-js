@@ -1,6 +1,6 @@
-import cartItem from '../api/cart-item.js'
-import CartStore from '../js/local-storage.js'
-import processToCheckout from '../js/process-to-checkout.js'
+import cartItem from './cart-item.js'
+import CartStore from '../../js/local-storage.js'
+import processToCheckout from '../../js/process-to-checkout.js'
 
 function CartListItemDraw(cartList) {  
   for (let i = 0; i < localStorage.length; i++) {

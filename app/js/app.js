@@ -4,7 +4,7 @@ import DistributeBlocks from './distribute.js'
 import CategoryLinks from './category-links.js'
 import {pageTransition} from './page-transition.js'
 import Cart from './cart.js'
-import {CartTotalAmountDraw} from '../api/cart-template.js'
+import {CartTotalAmountDraw} from '../api/templates/cart-template.js'
 
 Link();
 ModalWindow();

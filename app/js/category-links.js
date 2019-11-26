@@ -20,7 +20,7 @@ export default function() {
           distributeBlocks(name)
         }
       };
-      xhr.open("GET", `http://localhost:3000/api/links/${name}.json`, true);
+      xhr.open("GET", `http://localhost:3000/api/data/${name}.json`, true);
       xhr.send();
       history.pushState(state, title, url)
     })

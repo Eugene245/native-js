@@ -1,5 +1,5 @@
-import blockText from '../api/product-template.js'
-import prodList from '../api/products.js'
+import blockText from '../api/templates/product-template.js'
+import prodList from '../api/data/products.js'
 
 function drawBlocks(selector, blocksQty, elementsQty, prodInfoList) {
     let blockSelector = document.querySelector(selector)

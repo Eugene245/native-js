@@ -1,6 +1,5 @@
-import checkoutSwitch from '../js/checkout-switch.js'
 import ModalWindow from '../js/modal.js'
-import { DrawCart } from '../api/cart-template.js'
+import { DrawCart } from '../api/templates/cart-template.js'
 import processToCheckout from '../js/process-to-checkout.js'
 
 export function sendRequest(url) {
@@ -16,7 +15,6 @@ export function sendRequest(url) {
     xhr.send();
   });
 }
-
 
 export function pageTransition() {
   let wrapper = document.querySelector(".wrapper")

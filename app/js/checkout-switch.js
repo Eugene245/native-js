@@ -1,4 +1,4 @@
-import formValues from '../api/links/checkout-form-values.js'
+import formValues from '../api/data/checkout-form-values.js'
 
 export default function() {
   let shippingAddressSection = document.getElementsByClassName("shipping-address-section")

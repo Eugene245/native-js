@@ -1,6 +1,6 @@
 import CartStore from '../js/local-storage.js'
-import prodList from '../api/products.js'
-import {CartTotalAmountDraw} from '../api/cart-template.js'
+import prodList from '../api/data/products.js'
+import {CartTotalAmountDraw} from '../api/templates/cart-template.js'
 
 class Cart {
     constructor() {

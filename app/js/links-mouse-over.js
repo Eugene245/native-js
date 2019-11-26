@@ -12,24 +12,12 @@ function categoryLinksInsert(start, end, numOfColumn, arr) {
     }
 }
 
-// console.log([header, wrapper].length)
-//         // [header, wrapper].forEach(el => {
-//         //     console.log(el)
-//         // })
-
-//         for (let i = 0; i < [header, wrapper].length; i++) {
-//             console.log([header, wrapper][i])
-            
-//         }
-
-
-
 export default function() {
     document.querySelectorAll(".navbar-link a").forEach(element => {
         element.addEventListener("mouseover", e => {
         e.preventDefault();
         const xhr = new XMLHttpRequest()
-    xhr.open("GET", `http://localhost:3000/api/links/${e.target.className.replace("navbar-link__", "")}.json`, true)
+    xhr.open("GET", `http://localhost:3000/api/data/${e.target.className.replace("navbar-link__", "")}.json`, true)
         xhr.onload = () => {
             let linkNameList = JSON.parse(xhr.responseText)
             let numOfLinks = Math.floor(Math.random() * (Object.keys(linkNameList).length + 1))
